@@ -1,0 +1,1 @@
+/home/rodri/grocery_ai_planning_ws/devel/.private/grocery/etc/catkin/profile.d/99_nist_gear_setup.sh

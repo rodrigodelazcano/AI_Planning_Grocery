@@ -1,0 +1,7 @@
+grocery
+/home/rodri/grocery_ai_planning_ws/devel/.private/grocery/cmake.lock /home/rodri/grocery_ai_planning_ws/devel/./cmake.lock
+/home/rodri/grocery_ai_planning_ws/devel/.private/grocery/share/grocery/cmake/groceryConfig-version.cmake /home/rodri/grocery_ai_planning_ws/devel/share/grocery/cmake/groceryConfig-version.cmake
+/home/rodri/grocery_ai_planning_ws/devel/.private/grocery/share/grocery/cmake/groceryConfig.cmake /home/rodri/grocery_ai_planning_ws/devel/share/grocery/cmake/groceryConfig.cmake
+/home/rodri/grocery_ai_planning_ws/devel/.private/grocery/etc/catkin/profile.d/cmake.lock /home/rodri/grocery_ai_planning_ws/devel/etc/catkin/profile.d/cmake.lock
+/home/rodri/grocery_ai_planning_ws/devel/.private/grocery/etc/catkin/profile.d/99_nist_gear_setup.sh /home/rodri/grocery_ai_planning_ws/devel/etc/catkin/profile.d/99_nist_gear_setup.sh
+/home/rodri/grocery_ai_planning_ws/devel/.private/grocery/lib/pkgconfig/grocery.pc /home/rodri/grocery_ai_planning_ws/devel/lib/pkgconfig/grocery.pc
