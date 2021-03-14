@@ -202,7 +202,7 @@ install(DIRECTORY launch/
 #   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 # )
 # Configure the setup script
-catkin_add_env_hooks(99_nist_gear_setup
+catkin_add_env_hooks(grocery_world_setup
   DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/cmake
   SHELLS sh)
 #############
