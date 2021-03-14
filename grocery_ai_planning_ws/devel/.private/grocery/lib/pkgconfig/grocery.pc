@@ -1,8 +1,0 @@
-prefix=/home/rodri/grocery_ai_planning_ws/devel/.private/grocery
-
-Name: grocery
-Description: Description of grocery
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

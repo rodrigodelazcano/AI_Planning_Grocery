@@ -1,1 +1,0 @@
-/home/rodri/grocery_ai_planning_ws/devel/.private/grocery/share/grocery/cmake/groceryConfig-version.cmake
