@@ -1,0 +1,7 @@
+turtlebot_pkgs/turtlebot_apps/turtlebot_navigation
+/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/turtlebot_navigation/cmake.lock /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/./cmake.lock
+/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/turtlebot_navigation/share/turtlebot_navigation/cmake/turtlebot_navigationConfig.cmake /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/turtlebot_navigation/cmake/turtlebot_navigationConfig.cmake
+/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/turtlebot_navigation/share/turtlebot_navigation/cmake/turtlebot_navigationConfig-version.cmake /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/turtlebot_navigation/cmake/turtlebot_navigationConfig-version.cmake
+/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/turtlebot_navigation/etc/catkin/profile.d/25.turtlebot-navigation.sh /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/etc/catkin/profile.d/25.turtlebot-navigation.sh
+/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/turtlebot_navigation/lib/turtlebot_navigation/laser_footprint_filter /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/lib/turtlebot_navigation/laser_footprint_filter
+/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/turtlebot_navigation/lib/pkgconfig/turtlebot_navigation.pc /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/lib/pkgconfig/turtlebot_navigation.pc

@@ -1,0 +1,32 @@
+<launch>
+  <!-- <arg name="gui"        default="true"/> -->
+  <arg name="world_file" default="grocery.world"/>
+  <arg name ="init_pose" value="-x 0.7 -y 0.7 -z 0 -R 0 -P 0 -Y 0"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="use_sim_time" value="true"/>
+    <arg name="debug" value="false"/>
+    <!-- <arg name="gui" value="$(arg gui)" /> -->
+    <arg name="world_name" value="$(arg world_file)"/>
+  </include>
+
+  <arg name="urdf_file" default="$(find xacro)/xacro '$(find grocery)/robot/grocery_turtlebot.urdf.xacro'"/>
+  <param name="robot_description" command="$(arg urdf_file)"/>
+  
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="30.0" />
+  </node>
+
+  <!-- Velocity muxer -->
+  <node pkg="nodelet" type="nodelet" name="mobile_base_nodelet_manager" args="manager"/>
+  <node pkg="nodelet" type="nodelet" name="cmd_vel_mux"
+        args="load yocs_cmd_vel_mux/CmdVelMuxNodelet mobile_base_nodelet_manager">
+    <param name="yaml_cfg_file" value="$(find turtlebot_bringup)/param/mux.yaml"/>
+    <remap from="cmd_vel_mux/output" to="mobile_base/commands/velocity"/>
+  </node>
+
+  <!-- Gazebo model spawner -->
+  <node name="spawn_turtlebot_model" pkg="gazebo_ros" respawn="false" type="spawn_model"
+        args="$(arg init_pose) -wait grocery_world -unpause -urdf -param robot_description -model mobile_base "/>
+
+</launch>
