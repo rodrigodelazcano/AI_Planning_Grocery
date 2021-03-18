@@ -1,5 +1,5 @@
 import numpy as np
-from map import Line, Map
+from map import Map
 
 map = Map()
 
