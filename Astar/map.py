@@ -124,13 +124,10 @@ class Map():
     def update_goal(self, x, y):
         self.goal = np.array([x, y])
     
-    # def check_goal(self, x, y, threshold):
-    #     euc_dist = np.sqrt()
+    def check_goal(self, x, y, threshold):
+        euc_dist = np.linalg.norm(self.goal - np.array([x, y]))
 
-
-
-            
-            
-
-
-
+        if (euc_dist <= threshold):
+            return True
+        
+        return False
