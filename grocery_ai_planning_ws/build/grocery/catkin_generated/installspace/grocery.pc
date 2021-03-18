@@ -1,0 +1,8 @@
+prefix=/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/install
+
+Name: grocery
+Description: Description of grocery
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

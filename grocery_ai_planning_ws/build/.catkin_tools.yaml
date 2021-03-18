@@ -1,0 +1,6 @@
+devel_space: /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel
+install: false
+install_space: /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/install
+profile: default
+source_space: /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/src
+workspace: /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws

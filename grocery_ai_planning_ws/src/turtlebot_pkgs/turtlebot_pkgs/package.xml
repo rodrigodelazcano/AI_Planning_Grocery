@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>turtlebot_pkgs</name>
+  <version>0.0.0</version>
+  <description>The turtlebot package</description>
+
+  <maintainer email="r.l.p.v96@gmail.com"></maintainer>
+  <license>TODO</license>
+
+
+  <exec_depend>kobuki</exec_depend>
+  <exec_depend>kobukibumper2pc</exec_depend>
+  <exec_depend>kobuki_desktop</exec_depend>
+  <exec_depend>kobuki_keyop</exec_depend>
+  <exec_depend>kobuki_msgs</exec_depend>
+  <exec_depend>kobuki_node</exec_depend>
+  <exec_depend>kobuki_safety_controller</exec_depend>
+  <exec_depend>turtlebot</exec_depend>
+  <exec_depend>tturtlebot_simulator</exec_depend>
+  <exec_depend>yocs_cmd_vel_mux</exec_depend>
+  <exec_depend>yocs_controllers</exec_depend>
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <export>
+    <metapackage/>
+  </export>
+</package>

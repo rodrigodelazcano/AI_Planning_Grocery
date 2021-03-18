@@ -1,0 +1,5 @@
+turtlebot_pkgs/kobuki_description
+/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/kobuki_description/cmake.lock /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/./cmake.lock
+/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/kobuki_description/share/kobuki_description/cmake/kobuki_descriptionConfig.cmake /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/kobuki_description/cmake/kobuki_descriptionConfig.cmake
+/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/kobuki_description/share/kobuki_description/cmake/kobuki_descriptionConfig-version.cmake /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/kobuki_description/cmake/kobuki_descriptionConfig-version.cmake
+/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/kobuki_description/lib/pkgconfig/kobuki_description.pc /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/lib/pkgconfig/kobuki_description.pc

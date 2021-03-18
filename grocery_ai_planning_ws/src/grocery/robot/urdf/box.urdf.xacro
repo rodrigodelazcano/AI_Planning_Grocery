@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<robot name="grocery_box" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find turtlebot_description)/urdf/turtlebot_gazebo.urdf.xacro"/>
+  <xacro:include filename="$(find turtlebot_description)/urdf/turtlebot_properties.urdf.xacro"/>
+  
+  <!-- Parameterised in part by the values in turtlebot_properties.urdf.xacro -->
+  <xacro:macro name="grocery_box" params="parent">
+    <joint name="box_joint" type="fixed">
+      <origin xyz="0 0 0.4" rpy="0 0 0"/>
+      <parent link="${parent}"/>
+      <child link="box_frame" />
+    </joint>
+    <link name="box_frame">
+      <visual>
+       <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+         <mesh filename="package://grocery/models/box/meshes/box.dae"/>
+        </geometry>
+      </visual>
+  	  <collision>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  	    <geometry>
+  	      <mesh filename="package://grocery/models/box/meshes/box.dae"/>
+  	    </geometry>
+  	  </collision>
+      <inertial>
+        <mass value="0.001" />
+        <origin xyz="0 0 0" />
+        <inertia ixx="100" ixy="0.0" ixz="0.0"
+                 iyy="100" iyz="0.0"
+                 izz="100" />
+      </inertial>
+    </link>
+  </xacro:macro>
+</robot>
