@@ -1,1 +1,0 @@
-/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/grocery/etc/catkin/profile.d/grocery_world_setup.sh

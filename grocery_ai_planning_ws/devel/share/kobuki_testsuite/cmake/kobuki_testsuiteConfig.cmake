@@ -1,1 +1,0 @@
-/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/kobuki_testsuite/share/kobuki_testsuite/cmake/kobuki_testsuiteConfig.cmake
