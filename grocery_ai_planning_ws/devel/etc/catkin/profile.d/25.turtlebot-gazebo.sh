@@ -1,0 +1,1 @@
+/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/turtlebot_gazebo/etc/catkin/profile.d/25.turtlebot-gazebo.sh

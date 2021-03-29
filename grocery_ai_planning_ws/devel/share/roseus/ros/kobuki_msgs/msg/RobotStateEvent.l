@@ -1,0 +1,1 @@
+/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/kobuki_msgs/share/roseus/ros/kobuki_msgs/msg/RobotStateEvent.l
