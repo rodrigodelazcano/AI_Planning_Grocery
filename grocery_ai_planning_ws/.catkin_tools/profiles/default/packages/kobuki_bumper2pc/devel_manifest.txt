@@ -1,6 +1,0 @@
-turtlebot_pkgs/kobuki_bumper2pc
-/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/kobuki_bumper2pc/cmake.lock /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/./cmake.lock
-/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/kobuki_bumper2pc/share/kobuki_bumper2pc/cmake/kobuki_bumper2pcConfig-version.cmake /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/kobuki_bumper2pc/cmake/kobuki_bumper2pcConfig-version.cmake
-/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/kobuki_bumper2pc/share/kobuki_bumper2pc/cmake/kobuki_bumper2pcConfig.cmake /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/kobuki_bumper2pc/cmake/kobuki_bumper2pcConfig.cmake
-/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/kobuki_bumper2pc/lib/libkobuki_bumper2pc_nodelet.so /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/lib/libkobuki_bumper2pc_nodelet.so
-/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/kobuki_bumper2pc/lib/pkgconfig/kobuki_bumper2pc.pc /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/lib/pkgconfig/kobuki_bumper2pc.pc

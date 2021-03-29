@@ -1,1 +1,0 @@
-/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/kobuki_dashboard/share/kobuki_dashboard/cmake/kobuki_dashboardConfig-version.cmake

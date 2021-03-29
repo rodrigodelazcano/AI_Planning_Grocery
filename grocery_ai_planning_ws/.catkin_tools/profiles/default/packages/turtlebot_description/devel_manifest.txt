@@ -1,5 +1,0 @@
-turtlebot_pkgs/turtlebot/turtlebot_description
-/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/turtlebot_description/cmake.lock /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/./cmake.lock
-/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/turtlebot_description/share/turtlebot_description/cmake/turtlebot_descriptionConfig.cmake /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/turtlebot_description/cmake/turtlebot_descriptionConfig.cmake
-/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/turtlebot_description/share/turtlebot_description/cmake/turtlebot_descriptionConfig-version.cmake /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/turtlebot_description/cmake/turtlebot_descriptionConfig-version.cmake
-/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/turtlebot_description/lib/pkgconfig/turtlebot_description.pc /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/lib/pkgconfig/turtlebot_description.pc
