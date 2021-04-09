@@ -1,0 +1,7 @@
+turtlebot_pkgs/kobuki/kobuki_auto_docking
+/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/kobuki_auto_docking/cmake.lock /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/./cmake.lock
+/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/kobuki_auto_docking/share/kobuki_auto_docking/cmake/kobuki_auto_dockingConfig.cmake /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/kobuki_auto_docking/cmake/kobuki_auto_dockingConfig.cmake
+/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/kobuki_auto_docking/share/kobuki_auto_docking/cmake/kobuki_auto_dockingConfig-version.cmake /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/kobuki_auto_docking/cmake/kobuki_auto_dockingConfig-version.cmake
+/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/kobuki_auto_docking/lib/libkobuki_auto_docking_nodelet.so /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/lib/libkobuki_auto_docking_nodelet.so
+/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/kobuki_auto_docking/lib/libkobuki_auto_docking_ros.so /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/lib/libkobuki_auto_docking_ros.so
+/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/kobuki_auto_docking/lib/pkgconfig/kobuki_auto_docking.pc /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/lib/pkgconfig/kobuki_auto_docking.pc
