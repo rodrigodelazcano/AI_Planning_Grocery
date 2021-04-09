@@ -2,7 +2,6 @@ import random
 
 class Products():
     def __init__(self):
-        random.seed(0)
         self.product_list = {
             "coliflower": (1.54, 5.4),
             "brocoli": (1.54, 5.4),
@@ -64,5 +63,7 @@ class Products():
     def get_random_list(self):
         number_prod = random.randint(4,9) # number of products to be generated in the list
         return random.sample(self.all_prod_list, number_prod)
+    def seed(self, seed):
+        random.seed(seed)
 
 
