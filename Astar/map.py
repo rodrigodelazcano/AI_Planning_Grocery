@@ -4,7 +4,7 @@ import math
 class Line():
     def __init__(self, x1, x2, y1, y2, distance, side):
         self.coeff = np.polyfit([x1, x2],[y1, y2], 1)
-        self.side = side ## side 0 lef, side 1 right
+        self.side = side ## side 0 left, side 1 right
 
         if distance > 0:
             if (self.coeff[0] > 0 and side == 0):
