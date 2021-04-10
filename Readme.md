@@ -21,7 +21,9 @@ git clone https://github.com/rodrigodelazcano/AI_Planning_Grocery
 cd AI_Planning_Grocery
 ```
 
-## Run Instructions for Authors
+### Build Instructions
+
+### Run Instructions for Authors
 
 Instructions to run A* algorithm.
 
