@@ -20,7 +20,6 @@ class TurtlebotPath(TurtlebotGoToEnv):
     
     def handle_follow_path(self, path):
         
-
         for p in range(len(path.waypoints) - 1):
             current_x = path.waypoints[p].coord[0]
             current_y = path.waypoints[p].coord[1]
@@ -169,14 +168,219 @@ class TurtlebotPath(TurtlebotGoToEnv):
                     self._set_action(1)
                     self._set_action(0)
                     self.robot_direction = "SW"
-
-
+            elif (self.robot_direction == "S"):
+                if (move == "N"):
+                    self._set_action(1)
+                    self._set_action(1)
+                    self._set_action(1)
+                    self._set_action(1)
+                    self._set_action(0)
+                    self.robot_direction = "N"
+                elif (move == "E"):
+                    self._set_action(1)
+                    self._set_action(1)
+                    self._set_action(0)
+                    self.robot_direction = "E"
+                elif (move == "W"):
+                    self._set_action(2)
+                    self._set_action(2)
+                    self._set_action(0)
+                    self.robot_direction = "W"
+                elif(move == "S"):
+                    self._set_action(0)
+                    self.robot_direction = "S"
+                elif (move == "NE"):
+                    self._set_action(1)
+                    self._set_action(1)
+                    self._set_action(1)
+                    self._set_action(0)
+                    self.robot_direction = "NE"
+                elif (move == "NW"):
+                    self._set_action(2)
+                    self._set_action(2)
+                    self._set_action(2)
+                    self._set_action(0)
+                    self.robot_direction = "NW"
+                elif (move == "SE"):
+                    self._set_action(1)
+                    self._set_action(0)
+                    self.robot_direction = "SE"
+                else:
+                    self._set_action(2)
+                    self._set_action(0)
+                    self.robot_direction = "SW"
+            elif (self.robot_direction == "NE"):
+                if (move == "N"):
+                    self._set_action(1)
+                    self._set_action(0)
+                    self.robot_direction = "N"
+                elif (move == "E"):
+                    self._set_action(2)
+                    self._set_action(0)
+                    self.robot_direction = "E"
+                elif (move == "W"):
+                    self._set_action(1)
+                    self._set_action(1)
+                    self._set_action(1)
+                    self._set_action(0)
+                    self.robot_direction = "W"
+                elif(move == "S"):
+                    self._set_action(2)
+                    self._set_action(2)
+                    self._set_action(2)
+                    self._set_action(0)
+                    self.robot_direction = "S"
+                elif (move == "NE"):
+                    self._set_action(0)
+                    self.robot_direction = "NE"
+                elif (move == "NW"):
+                    self._set_action(1)
+                    self._set_action(1)
+                    self._set_action(0)
+                    self.robot_direction = "NW"
+                elif (move == "SE"):
+                    self._set_action(2)
+                    self._set_action(2)
+                    self._set_action(0)
+                    self.robot_direction = "SE"
+                else:
+                    self._set_action(2)
+                    self._set_action(2)
+                    self._set_action(2)
+                    self._set_action(2)
+                    self._set_action(0)
+                    self.robot_direction = "SW"
+            elif (self.robot_direction == "NW"):
+                if (move == "N"):
+                    self._set_action(2)
+                    self._set_action(0)
+                    self.robot_direction = "N"
+                elif (move == "E"):
+                    self._set_action(2)
+                    self._set_action(2)
+                    self._set_action(2)
+                    self._set_action(0)
+                    self.robot_direction = "E"
+                elif (move == "W"):
+                    self._set_action(1)
+                    self._set_action(0)
+                    self.robot_direction = "W"
+                elif(move == "S"):
+                    self._set_action(1)
+                    self._set_action(1)
+                    self._set_action(1)
+                    self._set_action(0)
+                    self.robot_direction = "S"
+                elif (move == "NE"):
+                    self._set_action(2)
+                    self._set_action(2)
+                    self._set_action(0)
+                    self.robot_direction = "NE"
+                elif (move == "NW"):
+                    self._set_action(0)
+                    self.robot_direction = "NW"
+                elif (move == "SE"):
+                    self._set_action(2)
+                    self._set_action(2)
+                    self._set_action(2)
+                    self._set_action(2)
+                    self._set_action(0)
+                    self.robot_direction = "SE"
+                else:
+                    self._set_action(1)
+                    self._set_action(1)
+                    self._set_action(0)
+                    self.robot_direction = "SW"
+            elif (self.robot_direction == "SE"):
+                if (move == "N"):
+                    self._set_action(1)
+                    self._set_action(1)
+                    self._set_action(1)
+                    self._set_action(0)
+                    self.robot_direction = "N"
+                elif (move == "E"):
+                    self._set_action(1)
+                    self._set_action(0)
+                    self.robot_direction = "E"
+                elif (move == "W"):
+                    self._set_action(2)
+                    self._set_action(2)
+                    self._set_action(2)
+                    self._set_action(0)
+                    self.robot_direction = "W"
+                elif(move == "S"):
+                    self._set_action(2)
+                    self._set_action(0)
+                    self.robot_direction = "S"
+                elif (move == "NE"):
+                    self._set_action(1)
+                    self._set_action(1)
+                    self._set_action(0)
+                    self.robot_direction = "NE"
+                elif (move == "NW"):
+                    self._set_action(2)
+                    self._set_action(2)
+                    self._set_action(2)
+                    self._set_action(2)
+                    self._set_action(0)
+                    self.robot_direction = "NW"
+                elif (move == "SE"):
+                    self._set_action(0)
+                    self.robot_direction = "SE"
+                else:
+                    self._set_action(2)
+                    self._set_action(2)
+                    self._set_action(0)
+                    self.robot_direction = "SW"
+            else:
+                if (move == "N"):
+                    self._set_action(2)
+                    self._set_action(2)
+                    self._set_action(2)
+                    self._set_action(0)
+                    self.robot_direction = "N"
+                elif (move == "E"):
+                    self._set_action(1)
+                    self._set_action(1)
+                    self._set_action(1)
+                    self._set_action(0)
+                    self.robot_direction = "E"
+                elif (move == "W"):
+                    self._set_action(2)
+                    self._set_action(0)
+                    self.robot_direction = "W"
+                elif(move == "S"):
+                    self._set_action(1)
+                    self._set_action(0)
+                    self.robot_direction = "S"
+                elif (move == "NE"):
+                    self._set_action(1)
+                    self._set_action(1)
+                    self._set_action(1)
+                    self._set_action(1)
+                    self._set_action(0)
+                    self.robot_direction = "NE"
+                elif (move == "NW"):
+                    self._set_action(2)
+                    self._set_action(2)
+                    self._set_action(2)
+                    self._set_action(2)
+                    self._set_action(0)
+                    self.robot_direction = "NW"
+                elif (move == "SE"):
+                    self._set_action(1)
+                    self._set_action(1)
+                    self._set_action(0)
+                    self.robot_direction = "SE"
+                else:
+                    self._set_action(0)
+                    self.robot_direction = "SW"
 
         return PathResponse(True)
 
 if __name__ == '__main__':
     try:
         node = rospy.init_node('pathcontrol')
-        a = TurtlebotPath()
+        tp = TurtlebotPath()
         rospy.spin()
     except rospy.ROSInterruptException: pass

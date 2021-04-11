@@ -69,7 +69,6 @@ class TurtlebotGoToEnv(TurtlebotEnv):
 		                       angular_speed)
                 rate.sleep()
 	            
-
         elif action == 2: #RIGHT
             # angular_speed = self.angular_speed
             self.last_action = "TURN_RIGHT"
