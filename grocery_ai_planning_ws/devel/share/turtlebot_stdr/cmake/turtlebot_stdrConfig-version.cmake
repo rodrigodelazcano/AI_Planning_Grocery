@@ -1,1 +1,0 @@
-/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/turtlebot_stdr/share/turtlebot_stdr/cmake/turtlebot_stdrConfig-version.cmake
