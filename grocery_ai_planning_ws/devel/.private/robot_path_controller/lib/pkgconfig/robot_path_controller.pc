@@ -1,0 +1,8 @@
+prefix=/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/robot_path_controller
+
+Name: robot_path_controller
+Description: Description of robot_path_controller
+Version: 0.0.0
+Cflags: -I/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/robot_path_controller/include
+Libs: -L${prefix}/lib 
+Requires: rospy message_runtime

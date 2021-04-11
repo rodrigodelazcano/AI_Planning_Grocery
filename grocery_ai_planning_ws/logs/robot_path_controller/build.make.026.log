@@ -1,0 +1,22 @@
+[35m[1mScanning dependencies of target _robot_path_controller_generate_messages_check_deps_Path[0m
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target _robot_path_controller_generate_messages_check_deps_WayPoint
+[  0%] Built target _robot_path_controller_generate_messages_check_deps_WayPointList
+[  0%] Built target _robot_path_controller_generate_messages_check_deps_Path
+[  5%] [34m[1mGenerating C++ code from robot_path_controller/Path.srv[0m
+[ 11%] [34m[1mGenerating Javascript code from robot_path_controller/Path.srv[0m
+[ 16%] [34m[1mGenerating Lisp code from robot_path_controller/Path.srv[0m
+[ 22%] [34m[1mGenerating Python code from SRV robot_path_controller/Path[0m
+[ 27%] [34m[1mGenerating EusLisp code from robot_path_controller/Path.srv[0m
+[ 38%] Built target robot_path_controller_generate_messages_lisp
+[ 50%] Built target robot_path_controller_generate_messages_nodejs
+[ 66%] Built target robot_path_controller_generate_messages_eus
+[ 77%] [34m[1mGenerating Python srv __init__.py for robot_path_controller[0m
+[ 77%] [34m[1mGenerating Python msg __init__.py for robot_path_controller[0m
+[ 88%] Built target robot_path_controller_generate_messages_py
+[100%] Built target robot_path_controller_generate_messages_cpp
+[100%] Built target robot_path_controller_generate_messages

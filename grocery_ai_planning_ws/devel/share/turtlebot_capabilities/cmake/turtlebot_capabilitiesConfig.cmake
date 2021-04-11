@@ -1,0 +1,1 @@
+/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/turtlebot_capabilities/share/turtlebot_capabilities/cmake/turtlebot_capabilitiesConfig.cmake
