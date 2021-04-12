@@ -1,8 +1,0 @@
-prefix=/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/ai_planning
-
-Name: ai_planning
-Description: Description of ai_planning
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
