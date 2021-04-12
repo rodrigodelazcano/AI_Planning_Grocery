@@ -24,12 +24,15 @@
   	    </geometry>
   	  </collision>
       <inertial>
-        <mass value="0.001" />
+        <mass value="0.000001" />
         <origin xyz="0 0 0" />
-        <inertia ixx="100" ixy="0.0" ixz="0.0"
-                 iyy="100" iyz="0.0"
-                 izz="100" />
+        <inertia ixx="0" ixy="0.0" ixz="0.0"
+                 iyy="0" iyz="0.0"
+                 izz="0" />
       </inertial>
     </link>
+    <gazebo reference="box_frame">
+    <gravity>0</gravity>
+  </gazebo>
   </xacro:macro>
 </robot>

@@ -1,7 +1,7 @@
 <launch>
   <!-- <arg name="gui"        default="true"/> -->
   <arg name="world_file" default="grocery.world"/>
-  <arg name ="init_pose" value="-x 0.7 -y 0.7 -z 0 -R 0 -P 0 -Y 0"/>
+  <arg name ="init_pose" value="-x 1 -y 1 -z 0 -R 0 -P 0 -Y 0"/>
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="use_sim_time" value="true"/>
@@ -28,5 +28,10 @@
   <!-- Gazebo model spawner -->
   <node name="spawn_turtlebot_model" pkg="gazebo_ros" respawn="false" type="spawn_model"
         args="$(arg init_pose) -wait grocery_world -unpause -urdf -param robot_description -model mobile_base "/>
+
+  <!-- Path follower service -->
+  <node pkg="robot_path_controller" type="controller.py" name="path_follower">
+  </node>
+        
 
 </launch>

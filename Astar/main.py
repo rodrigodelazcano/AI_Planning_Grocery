@@ -1,4 +1,4 @@
-from pyhop2 import hop
+from pyhop import hop
 import a_star
 
 # declaration of actions

@@ -1,0 +1,1 @@
+/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/kobuki_gazebo_plugins/share/kobuki_gazebo_plugins/cmake/kobuki_gazebo_pluginsConfig.cmake

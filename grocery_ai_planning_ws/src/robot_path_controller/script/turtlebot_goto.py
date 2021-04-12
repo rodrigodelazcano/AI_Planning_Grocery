@@ -7,7 +7,7 @@ from geometry_msgs.msg import Point
 from geometry_msgs.msg import Vector3
 from nav_msgs.msg import Odometry
 from turtlebot_env import TurtlebotEnv
-from robot_path_controller.msg import WayPoint, WayPointList
+from robot_path_controller.msg import WayPoint
 
 class TurtlebotGoToEnv(TurtlebotEnv):
     def __init__(self):
@@ -15,8 +15,8 @@ class TurtlebotGoToEnv(TurtlebotEnv):
         # Here we will add any init functions prior to starting the MyRobotEnv
         super(TurtlebotGoToEnv, self).__init__()
 
-        self.linear_forward_speed = 0.25
-        self.angular_speed = 0.25
+        self.linear_forward_speed = 0.2
+        self.angular_speed = 0.1
     
     def _set_action(self, action):
         linear_speed_vector = Vector3()
@@ -25,16 +25,10 @@ class TurtlebotGoToEnv(TurtlebotEnv):
         linear_speed_vector.z = 0.0
         angular_speed = 0.0
 
-        self.reset_odometry()
+        # self.reset_odometry()
 
         init_state = self.get_odom()
         init_yaw = self.get_yaw()
-        print(init_yaw)
-        if init_yaw < 0:
-            init_yaw = init_yaw + math.pi * 2
-
-        print(init_yaw)
-        rate = rospy.Rate(10) # 10hz
 
         # We convert the actions to speed movements to send to the parent class of Parrot
         if action == 0: #FORWARD
@@ -51,37 +45,34 @@ class TurtlebotGoToEnv(TurtlebotEnv):
                     linear_speed_vector.x = 0.0
                     self.move_base(linear_speed_vector, angular_speed)
                     break
+            rospy.sleep(1)
 
         elif action == 1: #LEFT
-            # angular_speed = self.angular_speed
+            angular_speed = self.angular_speed
             self.last_action = "TURN_LEFT"
-            begin_time = rospy.get_time()
-            duration = rospy.Time(25).to_sec()
-            end_time = duration + begin_time
-            target_rad = init_yaw + 45 * math.pi/180
-            while (end_time > rospy.get_time()):
-                odom = self.get_odom()
-                yaw = self.get_yaw()
-                if yaw < 0:
-                    yaw = yaw + math.pi * 2
-                angular_speed = 0.6 * (target_rad-yaw)
-                self.move_base(linear_speed_vector,
-		                       angular_speed)
-                rate.sleep()
-	            
+            
+            while not rospy.is_shutdown():
+                self.move_base(linear_speed_vector, angular_speed)
+                current_yaw = self.get_yaw()
+                dyaw = abs(math.degrees(init_yaw) - math.degrees(current_yaw))
+                if dyaw>=44.7:
+                    angular_speed = 0
+                    self.move_base(linear_speed_vector, angular_speed)
+                    break
+            
+            rospy.sleep(2)
+	            	            
         elif action == 2: #RIGHT
             # angular_speed = self.angular_speed
-            self.last_action = "TURN_RIGHT"
-            begin_time = rospy.get_time()
-            duration = rospy.Time(25).to_sec()
-            end_time = duration + begin_time
-            target_rad = init_yaw - 45 * math.pi/180
-            while (end_time > rospy.get_time()):
-                odom = self.get_odom()
-                yaw = self.get_yaw()
-                if yaw < 0:
-                    yaw = yaw + math.pi * 2
-                angular_speed = 0.6 * (target_rad-yaw)
-                self.move_base(linear_speed_vector,
-		                       angular_speed)
-                rate.sleep()	
+            angular_speed = -self.angular_speed
+            self.last_action = "TURN_LEFT"
+            while not rospy.is_shutdown():
+                self.move_base(linear_speed_vector, angular_speed)
+                current_yaw = self.get_yaw()
+                dyaw = abs(math.degrees(init_yaw) - math.degrees(current_yaw))
+                if dyaw>=44.7:
+                    angular_speed = 0
+                    self.move_base(linear_speed_vector, angular_speed)
+                    break
+        
+        rospy.sleep(2)

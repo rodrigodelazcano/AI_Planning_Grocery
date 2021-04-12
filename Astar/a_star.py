@@ -1,5 +1,7 @@
 from map import Map
 new_map = Map()
+import math
+import numpy as np
 
 maze = [[0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
@@ -53,7 +55,8 @@ def astar(start, goal):
         closed_list.append(current_node)
 
         # reached goal node then backtrack and return the path
-        if(current_node.position == goal_node.position): 
+        distance_to_goal = np.linalg.norm(np.array(current_node.position) - np.array(goal_node.position))
+        if(distance_to_goal <= 0.5): 
             print("goal reached")
             path = []
             current = current_node
@@ -66,9 +69,9 @@ def astar(start, goal):
             return path[::-1]
 
         children = []
-        delta = 0.25
+        delta = 0.2
 
-        for new_pos in [(0,-delta), (0,delta), (-delta,0), (delta,0), (-delta,-delta), (-delta,delta), (delta,-delta), (delta,delta)]:
+        for new_pos in [(0,-delta), (0,delta), (-delta,0), (delta,0), (-delta*math.sqrt(1/2),-delta*math.sqrt(1/2)), (-delta*math.sqrt(1/2),delta*math.sqrt(1/2)), (delta,-delta), (delta,delta)]:
 
             child_node = Node(current_node, (current_node.position[0]+new_pos[0], current_node.position[1]+new_pos[1]))
             

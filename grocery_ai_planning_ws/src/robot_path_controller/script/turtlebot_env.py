@@ -7,7 +7,7 @@ from geometry_msgs.msg import Point, Twist
 from std_msgs.msg import Empty
 from sensor_msgs.msg import Imu
 from tf.transformations import euler_from_quaternion
-from robot_path_controller.msg import WayPoint, WayPointList
+from robot_path_controller.msg import WayPoint
 
 class TurtlebotEnv(object):
     def __init__(self):

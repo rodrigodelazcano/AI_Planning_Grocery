@@ -19,13 +19,16 @@ class TurtlebotPath(TurtlebotGoToEnv):
         super(TurtlebotPath, self).__init__()
     
     def handle_follow_path(self, path):
-        
+  
         for p in range(len(path.waypoints) - 1):
             current_x = path.waypoints[p].coord[0]
             current_y = path.waypoints[p].coord[1]
 
             next_x = path.waypoints[p+1].coord[0]
             next_y = path.waypoints[p+1].coord[1]
+
+            print("start: ", current_x, ",", current_y)
+            print("goal: ", next_x, ",", next_y)
 
             dx = next_x - current_x
             dy = next_y - current_y

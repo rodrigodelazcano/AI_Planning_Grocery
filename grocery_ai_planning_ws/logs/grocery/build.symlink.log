@@ -1,0 +1,5 @@
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/grocery/cmake/groceryConfig-version.cmake
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/grocery/cmake/groceryConfig.cmake
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/etc/catkin/profile.d/cmake.lock
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/etc/catkin/profile.d/grocery_world_setup.sh
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/lib/pkgconfig/grocery.pc

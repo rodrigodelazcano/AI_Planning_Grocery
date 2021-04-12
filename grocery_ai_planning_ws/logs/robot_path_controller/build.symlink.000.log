@@ -1,0 +1,66 @@
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/include/robot_path_controller/PathResponse.h
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/include/robot_path_controller/WayPoint.h
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/include/robot_path_controller/PathRequest.h
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/include/robot_path_controller/Path.h
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/common-lisp/ros/robot_path_controller/msg/robot_path_controller-msg.asd
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/common-lisp/ros/robot_path_controller/msg/_package.lisp
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/common-lisp/ros/robot_path_controller/msg/_package_WayPoint.lisp
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/common-lisp/ros/robot_path_controller/msg/WayPoint.lisp
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/common-lisp/ros/robot_path_controller/srv/_package.lisp
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/common-lisp/ros/robot_path_controller/srv/Path.lisp
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/common-lisp/ros/robot_path_controller/srv/_package_Path.lisp
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/common-lisp/ros/robot_path_controller/srv/robot_path_controller-srv.asd
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/roseus/ros/robot_path_controller/manifest.l
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/roseus/ros/robot_path_controller/msg/WayPoint.l
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/roseus/ros/robot_path_controller/srv/Path.l
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/robot_path_controller/cmake/robot_path_controller-msg-extras.cmake
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/robot_path_controller/cmake/robot_path_controllerConfig.cmake
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/robot_path_controller/cmake/robot_path_controllerConfig-version.cmake
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/robot_path_controller/cmake/robot_path_controller-msg-paths.cmake
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/gennodejs/ros/robot_path_controller/_index.js
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/gennodejs/ros/robot_path_controller/msg/_index.js
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/gennodejs/ros/robot_path_controller/msg/WayPoint.js
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/gennodejs/ros/robot_path_controller/srv/_index.js
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/gennodejs/ros/robot_path_controller/srv/Path.js
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/lib/pkgconfig/robot_path_controller.pc
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/lib/python2.7/dist-packages/robot_path_controller/__init__.py
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/lib/python2.7/dist-packages/robot_path_controller/msg/_WayPoint.py
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/lib/python2.7/dist-packages/robot_path_controller/msg/__init__.py
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/lib/python2.7/dist-packages/robot_path_controller/srv/_Path.py
+Symlinking /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/lib/python2.7/dist-packages/robot_path_controller/srv/__init__.py
+Cleaning: (/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/robot_path_controller/include/robot_path_controller/WayPointList.h, /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/include/robot_path_controller/WayPointList.h)
+Cleaning: (/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/robot_path_controller/include/robot_path_controller/PathWayPoints.h, /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/include/robot_path_controller/PathWayPoints.h)
+Cleaning: (/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/robot_path_controller/share/common-lisp/ros/robot_path_controller/msg/_package_PathWayPoints.lisp, /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/common-lisp/ros/robot_path_controller/msg/_package_PathWayPoints.lisp)
+Cleaning: (/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/robot_path_controller/share/common-lisp/ros/robot_path_controller/msg/_package_WayPointList.lisp, /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/common-lisp/ros/robot_path_controller/msg/_package_WayPointList.lisp)
+Cleaning: (/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/robot_path_controller/share/common-lisp/ros/robot_path_controller/msg/WayPointList.lisp, /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/common-lisp/ros/robot_path_controller/msg/WayPointList.lisp)
+Cleaning: (/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/robot_path_controller/share/common-lisp/ros/robot_path_controller/msg/PathWayPoints.lisp, /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/common-lisp/ros/robot_path_controller/msg/PathWayPoints.lisp)
+Cleaning: (/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/robot_path_controller/share/roseus/ros/robot_path_controller/msg/PathWayPoints.l, /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/roseus/ros/robot_path_controller/msg/PathWayPoints.l)
+Cleaning: (/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/robot_path_controller/share/roseus/ros/robot_path_controller/msg/WayPointList.l, /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/roseus/ros/robot_path_controller/msg/WayPointList.l)
+Cleaning: (/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/robot_path_controller/share/gennodejs/ros/robot_path_controller/msg/WayPointList.js, /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/gennodejs/ros/robot_path_controller/msg/WayPointList.js)
+Cleaning: (/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/robot_path_controller/share/gennodejs/ros/robot_path_controller/msg/PathWayPoints.js, /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/gennodejs/ros/robot_path_controller/msg/PathWayPoints.js)
+Cleaning: (/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/robot_path_controller/lib/python2.7/dist-packages/robot_path_controller/msg/_PathWayPoints.py, /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/lib/python2.7/dist-packages/robot_path_controller/msg/_PathWayPoints.py)
+Cleaning: (/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/robot_path_controller/lib/python2.7/dist-packages/robot_path_controller/msg/_WayPointList.py, /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/lib/python2.7/dist-packages/robot_path_controller/msg/_WayPointList.py)
+Unlinking: /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/include/robot_path_controller/WayPointList.h
+Already unlinked: {}
+Unlinking: /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/include/robot_path_controller/PathWayPoints.h
+Already unlinked: {}
+Unlinking: /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/common-lisp/ros/robot_path_controller/msg/_package_PathWayPoints.lisp
+Already unlinked: {}
+Unlinking: /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/common-lisp/ros/robot_path_controller/msg/_package_WayPointList.lisp
+Already unlinked: {}
+Unlinking: /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/common-lisp/ros/robot_path_controller/msg/WayPointList.lisp
+Already unlinked: {}
+Unlinking: /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/common-lisp/ros/robot_path_controller/msg/PathWayPoints.lisp
+Already unlinked: {}
+Unlinking: /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/roseus/ros/robot_path_controller/msg/PathWayPoints.l
+Already unlinked: {}
+Unlinking: /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/roseus/ros/robot_path_controller/msg/WayPointList.l
+Already unlinked: {}
+Unlinking: /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/gennodejs/ros/robot_path_controller/msg/WayPointList.js
+Already unlinked: {}
+Unlinking: /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/share/gennodejs/ros/robot_path_controller/msg/PathWayPoints.js
+Already unlinked: {}
+Unlinking: /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/lib/python2.7/dist-packages/robot_path_controller/msg/_PathWayPoints.py
+Already unlinked: {}
+Unlinking: /home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/lib/python2.7/dist-packages/robot_path_controller/msg/_WayPointList.py
+Already unlinked: {}
