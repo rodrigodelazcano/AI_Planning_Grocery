@@ -59,6 +59,62 @@
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
         </visual>
+        <collision name='collision'>
+          <laser_retro>0</laser_retro>
+          <max_contacts>10</max_contacts>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://grocery_world/meshes/grocery.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>0</slip1>
+                <slip2>0</slip2>
+              </ode>
+              <torsional>
+                <coefficient>1</coefficient>
+                <patch_radius>0</patch_radius>
+                <surface_radius>0</surface_radius>
+                <use_patch_radius>1</use_patch_radius>
+                <ode>
+                  <slip>0</slip>
+                </ode>
+              </torsional>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0</restitution_coefficient>
+              <threshold>1e+06</threshold>
+            </bounce>
+            <contact>
+              <collide_without_contact>0</collide_without_contact>
+              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+              <collide_bitmask>1</collide_bitmask>
+              <ode>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+                <max_vel>0.01</max_vel>
+                <min_depth>0</min_depth>
+              </ode>
+              <bullet>
+                <split_impulse>1</split_impulse>
+                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+              </bullet>
+            </contact>
+          </surface>
+        </collision>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
@@ -2827,10 +2883,10 @@
       <pose frame=''>3.30262 5.20539 0.868134 0 -0 0</pose>
     </model>
     <state world_name='default'>
-      <sim_time>38342 258000000</sim_time>
-      <real_time>165 714318009</real_time>
-      <wall_time>1618259759 762752168</wall_time>
-      <iterations>28677</iterations>
+      <sim_time>38313 581000000</sim_time>
+      <real_time>5872 8075516</real_time>
+      <wall_time>1618026194 280070572</wall_time>
+      <iterations>5862939</iterations>
       <model name='apple'>
         <pose frame=''>4.07293 5.83603 0.862702 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -6701,16 +6757,6 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='ground_plane'>
-        <pose frame=''>1.26996 5.10848 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>1.26996 5.10848 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
       <model name='honey'>
         <pose frame=''>9.47005 8.37195 0.979193 0 -0 1.57698</pose>
         <scale>1 1 1</scale>
@@ -9972,7 +10018,7 @@
         </link>
       </model>
       <model name='soup'>
-        <pose frame=''>8.72716 10.485 0.978819 0 0 -1.55591</pose>
+        <pose frame=''>8.72717 10.485 0.978819 0 0 -1.55591</pose>
         <scale>1 1 1</scale>
         <link name='link_1'>
           <pose frame=''>8.72716 10.485 0.978819 0 0 -1.55591</pose>
@@ -9992,7 +10038,7 @@
         </link>
       </model>
       <model name='soup_clone_0'>
-        <pose frame=''>8.72767 10.4975 0.115047 0 0 -1.55591</pose>
+        <pose frame=''>8.72766 10.4975 0.115047 0 0 -1.55591</pose>
         <scale>1 1 1</scale>
         <link name='link_1'>
           <pose frame=''>8.72766 10.4975 0.115047 0 0 -1.55591</pose>
@@ -10002,7 +10048,7 @@
         </link>
       </model>
       <model name='soup_clone_1'>
-        <pose frame=''>8.97982 10.4994 0.545258 0 0 -1.55591</pose>
+        <pose frame=''>8.97981 10.4994 0.545258 0 0 -1.55591</pose>
         <scale>1 1 1</scale>
         <link name='link_1'>
           <pose frame=''>8.97981 10.4994 0.545258 0 0 -1.55591</pose>
@@ -10012,7 +10058,7 @@
         </link>
       </model>
       <model name='soup_clone_2'>
-        <pose frame=''>8.72894 10.4917 0.545258 0 0 -1.55591</pose>
+        <pose frame=''>8.72895 10.4917 0.545258 0 0 -1.55591</pose>
         <scale>1 1 1</scale>
         <link name='link_1'>
           <pose frame=''>8.72894 10.4917 0.545258 0 0 -1.55591</pose>
@@ -10022,7 +10068,7 @@
         </link>
       </model>
       <model name='soup_clone_3'>
-        <pose frame=''>8.96107 10.5072 0.978819 0 0 -1.55591</pose>
+        <pose frame=''>8.96108 10.5072 0.978819 0 0 -1.55591</pose>
         <scale>1 1 1</scale>
         <link name='link_1'>
           <pose frame=''>8.96107 10.5072 0.978819 0 0 -1.55591</pose>
@@ -11812,11 +11858,11 @@
         </link>
       </model>
       <model name='whisky'>
-        <pose frame=''>511.38 196.194 -6.20958e+08 2.41799 -0.950565 -1.77395</pose>
+        <pose frame=''>510.099 195.72 -6.17798e+08 0.602144 -0.40635 -0.095356</pose>
         <scale>1 1 1</scale>
         <link name='link_1'>
-          <pose frame=''>511.38 196.194 -6.20958e+08 2.41799 -0.950565 -1.77395</pose>
-          <velocity>0.044663 0.016534 -110321 0.096188 -0.245888 -0.045971</velocity>
+          <pose frame=''>510.099 195.72 -6.17798e+08 0.602144 -0.40635 -0.095356</pose>
+          <velocity>0.044663 0.016534 -110040 0.096188 -0.245888 -0.045971</velocity>
           <acceleration>0 0 -9.8 0 -0 0</acceleration>
           <wrench>0 0 -9.8 0 -0 0</wrench>
         </link>
@@ -12016,7 +12062,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>3.87212 -1.83109 6.05 -0 0.60421 1.47461</pose>
+        <pose frame=''>5.92628 -9.42629 18.5887 0 0.94421 1.09861</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -90744,56 +90790,6 @@
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
       <pose frame=''>11.1288 6.50477 0.96882 0 -0 0</pose>
-    </model>
-    <model name='ground_plane'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>100 100</size>
-            </plane>
-          </geometry>
-          <surface>
-            <contact>
-              <collide_bitmask>65535</collide_bitmask>
-              <ode/>
-            </contact>
-            <friction>
-              <ode>
-                <mu>100</mu>
-                <mu2>50</mu2>
-              </ode>
-              <torsional>
-                <ode/>
-              </torsional>
-            </friction>
-            <bounce/>
-          </surface>
-          <max_contacts>10</max_contacts>
-        </collision>
-        <visual name='visual'>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>100 100</size>
-            </plane>
-          </geometry>
-          <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Grey</name>
-            </script>
-          </material>
-           <transparency>1000</transparency>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>1.26996 5.10848 0 0 -0 0</pose>
     </model>
   </world>
 </sdf>

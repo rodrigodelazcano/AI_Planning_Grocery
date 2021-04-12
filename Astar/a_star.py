@@ -56,7 +56,7 @@ def astar(start, goal):
 
         # reached goal node then backtrack and return the path
         distance_to_goal = np.linalg.norm(np.array(current_node.position) - np.array(goal_node.position))
-        if(distance_to_goal <= 0.5): 
+        if(distance_to_goal <= 0.1): 
             print("goal reached")
             path = []
             current = current_node

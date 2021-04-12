@@ -1,18 +1,7 @@
 from map import Map
-new_map = Map()
+new_map = Map(radius=0.177, clearance=0.05)
 import math
 import numpy as np
-
-maze = [[0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
 class Node():
 
@@ -24,7 +13,7 @@ class Node():
         self.g = 0
         self.h = 0
 
-def astar(start, goal):
+def astar(start, goal, step_size):
     "Return list of tuples for path"
 
     start_node = Node(None, start)
@@ -52,7 +41,7 @@ def astar(start, goal):
 
         # reached goal node then backtrack and return the path
         distance_to_goal = np.linalg.norm(np.array(current_node.position) - np.array(goal_node.position))
-        if(distance_to_goal <= 0.1): 
+        if(distance_to_goal <= 0.2): 
             print("goal reached")
             path = []
             current = current_node
@@ -65,7 +54,7 @@ def astar(start, goal):
             return path[::-1]
 
         children = []
-        delta = 0.25
+        delta = step_size
 
         for new_pos in [(0,-delta), (0,delta), (-delta,0), (delta,0), (-delta*math.sqrt(1/2),-delta*math.sqrt(1/2)),
                             (-delta*math.sqrt(1/2),delta*math.sqrt(1/2)), (delta*math.sqrt(1/2),-delta*math.sqrt(1/2)),

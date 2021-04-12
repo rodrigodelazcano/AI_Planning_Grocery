@@ -10,12 +10,14 @@ import rospy
 if __name__ == '__main__':
     node = rospy.init_node('a_star_planner')
     rospy.wait_for_service('follow_path')
-    start = (1, 1)
-    goal = (7.5, 8)
+    step_size = 0.4
+    start = (1.9, 5.59)
+    goal =(1.9, 7)
+
     try:
+        rospy.set_param("turtlebot/step_size", step_size)
         follow_path = rospy.ServiceProxy('follow_path', Path)
-        
-        path = astar(start, goal)
+        path = astar(start, goal, step_size)
         print(path)
         path_msg = []
         for point in path:
