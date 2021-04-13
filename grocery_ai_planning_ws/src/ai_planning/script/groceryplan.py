@@ -1,16 +1,16 @@
 from pyhop2 import pyhop2
-import products
-import gbfs
-from astar import astar
+# import products
+# from gbfs import gbfs
+from a_star import astar
 
 
 domain_name = 'groceryplan'
 
 # Create a new domain to contain the methods and operators
 pyhop2.Domain(domain_name)
-prod = products.Products()
-grocery_list = prod.get_random_list()
-ordered_grocery_list = gbfs(grocery_list)  # remove ordered_ when implementing optimal method
+# prod = products.Products()
+# grocery_list = prod.get_random_list()
+# ordered_grocery_list = gbfs(grocery_list)  # remove ordered_ when implementing optimal method
 
 
 ################################################################################
@@ -166,50 +166,49 @@ pyhop2.declare_task_methods('groceryshop',shop)
 # Running the examples
 
 print('-----------------------------------------------------------------------')
-print(f"Created the domain '{domain_name}'. To run the examples, type this:")
-print(f"{domain_name}.main()")
+print(f"Created the domain '{domain_name}'.")
 
-def main():
-    # Code for use in paging and debugging
-    from check_result import check_result, pause, set_trace
+# def main():
+#     # Code for use in paging and debugging
+#     from check_result import check_result, pause, set_trace
     
-    # If we've changed to some other domain, this will change us back.
-    pyhop2.set_current_domain(domain_name)
-    pyhop2.print_domain()
+#     # If we've changed to some other domain, this will change us back.
+#     pyhop2.set_current_domain(domain_name)
+#     pyhop2.print_domain()
 
-    state1 = state0.copy()
+#     state1 = state0.copy()
 
-    state1.display(heading='\nInitial state is')
+#     state1.display(heading='\nInitial state is')
 
-    pause()
-    print("""
-Use find_plan to plan how to get Alice from home to the park.
-We'll do it several times with different values for 'verbose'.
-""")
+#     pause()
+#     print("""
+# Use find_plan to plan how to get Alice from home to the park.
+# We'll do it several times with different values for 'verbose'.
+# """)
 
 
-    expected = [('move_robot', 'robot', 'item')]
+#     expected = [('move_robot', 'robot', 'item')]
 
-    # print("-- If verbose=0, the planner will return the solution but print nothing.")
-    # result = pyhop2.find_plan(state1,[('travel','alice','park')],verbose=0)
-    # check_result(result,expected)
+#     print("-- If verbose=0, the planner will return the solution but print nothing.")
+#     result = pyhop2.find_plan(state1,[('travel','alice','park')],verbose=0)
+#     check_result(result,expected)
 
-    # print("-- If verbose=1, the planner will print the problem and solution,")
-    # print("-- and then return the solution.\n")
-    # result = pyhop2.find_plan(state1,[('travel','alice','park')],verbose=1)
-    # check_result(result,expected)
+#     print("-- If verbose=1, the planner will print the problem and solution,")
+#     print("-- and then return the solution.\n")
+#     result = pyhop2.find_plan(state1,[('travel','alice','park')],verbose=1)
+#     check_result(result,expected)
 
-    # print("-- If verbose=2, the planner will print the problem, a note at each")
-    # print("-- recursive call, and the solution. Then it will return the solution.\n")
-    # result = pyhop2.find_plan(state1,[('travel','alice','park')],verbose=2)
-    # check_result(result,expected)
-    # pause()
+#     print("-- If verbose=2, the planner will print the problem, a note at each")
+#     print("-- recursive call, and the solution. Then it will return the solution.\n")
+#     result = pyhop2.find_plan(state1,[('travel','alice','park')],verbose=2)
+#     check_result(result,expected)
+#     pause()
 
-    print("-- If verbose=3, the planner will print even more information.\n")
-    result = pyhop2.find_plan(state1,[('groceryshop','robot','item')],verbose=3)
-    check_result(result,expected)
+#     print("-- If verbose=3, the planner will print even more information.\n")
+#     result = pyhop2.find_plan(state1,[('groceryshop','robot','item')],verbose=3)
+#     check_result(result,expected)
 
-    pause()
+#     pause()
 #     print("""
 # Find a plan that will first get Alice to the park, then get Bob to the park.
 # """)
@@ -241,6 +240,6 @@ We'll do it several times with different values for 'verbose'.
 #     print("No more examples")
 
 
-###############################################################################
+# ##############################################################################
 # At this point, I used to call main() so the examples would run automatically,
 # but I've removed that to maintain uniformity with the other example domains.

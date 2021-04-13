@@ -6,6 +6,8 @@ from map import Map
 from robot_path_controller.srv import Path, PathResponse
 from robot_path_controller.msg import WayPoint
 import rospy
+import groceryplan
+from check_result import check_result, pause, set_trace
 
 if __name__ == '__main__':
     node = rospy.init_node('a_star_planner')
@@ -17,6 +19,25 @@ if __name__ == '__main__':
     try:
         rospy.set_param("turtlebot/step_size", step_size)
         follow_path = rospy.ServiceProxy('follow_path', Path)
+        
+        #####################################################
+
+        # # Pyhop2 main()
+
+        # pyhop2.set_current_domain(groceryplan.domain_name)
+        # pyhop2.print_domain()
+
+        # state1 = groceryplan.state0.copy()
+        # state1.display(heading='\nInitial state is')
+
+        # pause()
+        # print("Use find plan to plan how to get Robot from start to the item.")
+        # expected = [('move_robot', 'robot', 'item')]
+
+        # result = pyhop2.find_plan(state1, [('groceryshop','robot','item')],verbose=3)
+
+        # # plan = pyhop2.find_plan(state1,[('groceryshop','robot',goal)])
+
         path = astar(start, goal, step_size)
         print(path)
         path_msg = []
