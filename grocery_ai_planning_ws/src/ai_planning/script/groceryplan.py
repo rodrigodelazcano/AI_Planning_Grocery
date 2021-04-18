@@ -20,16 +20,16 @@ rigid = pyhop2.State('rigid relations')
 # These types are used by the 'is_a' helper function, later in this file
 rigid.types = {
     'person':   ['robot'],
-    'location': ['item']}
+    'location': ['item', 'item2']}
 # rigid.dist = {
 #     ('home_a', 'park'):8,    ('home_b', 'park'):2, 
 #     ('station', 'home_a'):1, ('station', 'home_b'):7,
 #     ('home_a', 'home_b'):7,  ('station','park'):9}
 
 # prototypical initial state
-state0 = pyhop2.State()
-state0.loc = {'robot':(1,1), 'item':(1.9,7)}
-state0.wayp = []
+state = pyhop2.State()
+state.loc = {'robot':(1,1), 'item':(1.9,7), 'item2':(3, 5)}
+state.wayp = []
 
 # while grocery_list:
 # 	item = grocery_list.pop()
