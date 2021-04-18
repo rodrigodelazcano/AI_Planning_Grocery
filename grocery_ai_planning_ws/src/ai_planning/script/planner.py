@@ -27,18 +27,22 @@ if __name__ == '__main__':
 
         # Pyhop2 main()
 
-        state1 = groceryplan.state0.copy()
+        state1 = groceryplan.state.copy()
         state1.display(heading='\nInitial state is')
 
         pause()
         print("Use find plan to plan how to get Robot from start to the item.")
-        expected = [('move_robot', 'robot', 'item')]
 
-        result = pyhop2.find_plan(state1, [('groceryshop','robot','item')],verbose=3)
+
+        expected = [('move_robot', 'robot', 'item'), ('move_robot', 'robot', 'item2')]
+
+        result = pyhop2.find_plan(state1, [('groceryshop','robot','item'), ('groceryshop', 'robot', 'item2')],verbose=3)
+        print()
+
         check_result(result, expected)
 
         path = state1.wayp
-        print(path)
+        
         path_msg = []
         for point in path:
             waypoint = WayPoint()
