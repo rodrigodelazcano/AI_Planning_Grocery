@@ -1,4 +1,4 @@
-from pyhop2 import pyhop2
+import pyhop2
 # import products
 # from gbfs import gbfs
 from a_star import astar
@@ -28,7 +28,7 @@ rigid.types = {
 
 # prototypical initial state
 state0 = pyhop2.State()
-state0.loc = {'robot':(1,1)}
+state0.loc = {'robot':(1,1), 'item':(1.9,7)}
 state0.wayp = []
 
 # while grocery_list:
@@ -58,12 +58,11 @@ def is_a(variable,type):
 ###############################################################################
 # Actions:
 
-def move_robot(state,r,x,y):
-    if is_a(r,'robot') and is_a(x,'location') and is_a(y,'location') and x != y:
-        if state.loc[r] == x:
-            state.wayp = astar(x,y)
-            state.loc[r] = y
-            return state
+def move_robot(state,r,y):
+    if is_a(r,'person') and is_a(y,'location') and state.loc[r] != state.loc[y]:
+        state.wayp = astar(state.loc[r],state.loc[y], 0.4)
+        state.loc[r] = state.loc[y]
+        return state
 
 # def call_taxi(state,p,x):
 #     if is_a(p,'person') and is_a(x,'location'):
@@ -148,10 +147,9 @@ pyhop2.declare_actions(move_robot)
 #             return []
 
 def shop(state,r,y):
-    if is_a(r,'robot') and is_a(y,'location'):
-        x = state.loc[r]
-        if x != y:
-            return [('move_robot',r,x,y)]
+    if is_a(r,'person') and is_a(y,'location'):
+        if state.loc[r] != state.loc[y]:
+            return [('move_robot',r,y)]
 
 # def travel_by_taxi(state,p,y):
 #     if is_a(p,'person') and is_a(y,'location'):
