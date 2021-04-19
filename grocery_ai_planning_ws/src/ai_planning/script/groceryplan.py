@@ -27,9 +27,9 @@ rigid.types = {
 #     ('home_a', 'home_b'):7,  ('station','park'):9}
 
 # prototypical initial state
-state = pyhop2.State()
-state.loc = {'robot':(1,1), 'item':(1.9,7), 'item2':(3, 5)}
-state.wayp = []
+state0 = pyhop2.State()
+state0.loc = {'robot':(1,1), 'item':(1.9,7)}
+state0.wayp = []
 
 # while grocery_list:
 # 	item = grocery_list.pop()
@@ -60,8 +60,12 @@ def is_a(variable,type):
 
 def move_robot(state,r,y):
     if is_a(r,'person') and is_a(y,'location') and state.loc[r] != state.loc[y]:
+        global state0
         state.wayp = astar(state.loc[r],state.loc[y], 0.4)
         state.loc[r] = state.loc[y]
+        print(state0)
+        state0 = state
+        print(state0)
         return state
 
 # def call_taxi(state,p,x):
@@ -97,12 +101,17 @@ pyhop2.declare_actions(move_robot)
 
 
 # this does the same thing as the action model
-# def c_walk(state,p,x,y):
+# def c_move_robot(state,p,x,y):
 #     if is_a(p,'person') and is_a(x,'location') and is_a(y,'location'):
 #         if state.loc[p] == x:
 #             state.loc[p] = y
 #             return state
 
+def c_move_robot(state,r,y):
+    if is_a(r,'person') and is_a(y,'location') and state.loc[r] != state.loc[y]:
+        state.wayp = astar(state.loc[r],state.loc[y], 0.4)
+        state.loc[r] = state.loc[y]
+        return state
 
 # # c_call_taxi, version used in simple_tasks1
 # # this is like the action model except that the taxi doesn't always arrive
@@ -135,7 +144,7 @@ pyhop2.declare_actions(move_robot)
 #     return pay_driver(state,p,y)
 
 
-# pyhop2.declare_commands(c_walk, c_call_taxi, c_ride_taxi, c_pay_driver)
+pyhop2.declare_commands(c_move_robot)
 
 ###############################################################################
 # Methods:
