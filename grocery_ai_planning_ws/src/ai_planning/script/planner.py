@@ -6,6 +6,7 @@ from map import Map
 from robot_path_controller.srv import Path, PathResponse
 from robot_path_controller.msg import WayPoint
 import rospy
+from gazebo_msgs.srv import GetModelState
 from check_result import check_result, pause, set_trace
 
 #########################################################
@@ -104,46 +105,49 @@ if __name__ == '__main__':
     try:
         rospy.set_param("turtlebot/step_size", step_size)
         follow_path = rospy.ServiceProxy('follow_path', Path)
+        robot_location = rospy.ServiceProxy('/gazebo/get_model_state', GetModelState)
         
         #####################################################
 
         # Pyhop2 main()
 
-        state1 = state0.copy()
-        state1.display(heading='\nInitial state is')
-
-        pause()
-        print("Use find plan to plan how to get Robot from start to the item.")
-
-        expected = [('move_robot', 'robot', 'coliflower'), ('move_robot', 'robot', 'chicken')]
-
-        result = pyhop2.find_plan(state1, [('groceryshop','robot','coliflower'), ('groceryshop','robot','chicken')],verbose=3)
-        check_result(result, expected)
+        resp_location = robot_location('mobile_base', 'world')
+        print(resp_location.pose.position)
+        # state1 = state0.copy()
+        # state1.display(heading='\nInitial state is')
 
         # pause()
-        # new_state = pyhop2.run_lazy_lookahead(state1,[('groceryshop','robot','item')],verbose=3)
-        pause()
+        # print("Use find plan to plan how to get Robot from start to the item.")
 
-        total_path = state0.wayp
+        # expected = [('move_robot', 'robot', 'coliflower'), ('move_robot', 'robot', 'chicken')]
+
+        # result = pyhop2.find_plan(state1, [('groceryshop','robot','coliflower'), ('groceryshop','robot','chicken')],verbose=3)
+        # check_result(result, expected)
+
+        # # pause()
+        # # new_state = pyhop2.run_lazy_lookahead(state1,[('groceryshop','robot','item')],verbose=3)
+        # pause()
+
+        # total_path = state0.wayp
         
-        item_ctr = 0
+        # item_ctr = 0
 
-        while(total_path):
+        # while(total_path):
 
-        	path = total_path.pop(0)
+        # 	path = total_path.pop(0)
 
-	        path_msg = []
-	        for point in path:
-	            waypoint = WayPoint()
-	            waypoint.coord = point
-	            path_msg.append(waypoint)
+	    #     path_msg = []
+	    #     for point in path:
+	    #         waypoint = WayPoint()
+	    #         waypoint.coord = point
+	    #         path_msg.append(waypoint)
 	        
-	        resp = follow_path(path_msg)
+	    #     resp = follow_path(path_msg)
 
-	        item_ctr += 1
-	        print('Item No: ', item_ctr, 'picked!!')
+	    #     item_ctr += 1
+	    #     print('Item No: ', item_ctr, 'picked!!')
 
-        print(resp)
+        # print(resp)
         
     except rospy.ServiceException as e:
         print("Service call failed: %s"%e)
