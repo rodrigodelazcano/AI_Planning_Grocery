@@ -142,14 +142,18 @@ if __name__ == '__main__':
         pause()
         print("Use find plan to plan how to get Robot from start to the item.")
 
-        expected = [('move_robot', 'robot', 'coliflower')]
-
         result = pyhop2.find_plan(state1, [('groceryshop','robot','coliflower')],verbose=3)
-        check_result(result, expected)
 
         pause()
         new_state = pyhop2.run_lazy_lookahead(state1,[('groceryshop','robot','coliflower')],verbose=3)
         pause()
+
+        result = pyhop2.find_plan(new_state,[('groceryshop','robot','chicken')],verbose=3)
+
+        pause()
+        new_state = pyhop2.run_lazy_lookahead(new_state,[('groceryshop','robot','chicken')],verbose=3)
+
+
 
         # total_path = state0.wayp
         
