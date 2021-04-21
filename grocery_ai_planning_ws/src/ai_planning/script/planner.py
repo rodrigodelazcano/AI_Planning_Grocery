@@ -8,11 +8,16 @@ from robot_path_controller.msg import WayPoint
 import rospy
 from gazebo_msgs.srv import GetModelState
 from check_result import check_result, pause, set_trace
+from products import Products
+
+prod = Products()
+item_list = prod.get_random_list()
 
 #########################################################
 ## Grocery Plan #########################################
 
 domain_name = 'groceryplan'
+
 
 # Create a new domain to contain the methods and operators
 pyhop2.Domain(domain_name)
@@ -24,12 +29,15 @@ rigid = pyhop2.State('rigid relations')
 # These types are used by the 'is_a' helper function, later in this file
 rigid.types = {
     'person':   ['robot'],
-    'location': ['coliflower', 'chicken']}
+    'location': item_list}
 
 # prototypical initial state
 state0 = pyhop2.State('state0')
-state0.loc = {'robot':(1,1), 'coliflower': (1.54, 5.4), 'chicken': (2.06, 10.73)}
-# state0.wayp = []
+state0.loc = {'robot':(1,1)}
+
+# adding items in the list
+for item in item_list:
+	state0.loc[item] = prod.product_list[item]
 
 
 # Helper functions:
@@ -136,22 +144,18 @@ if __name__ == '__main__':
         # Pyhop2 main()
 
 
-        state1 = state0.copy()
-        state1.display(heading='\nInitial state is')
+        new_state = state0.copy()
+        new_state.display(heading='\nInitial state is')
 
-        pause()
         print("Use find plan to plan how to get Robot from start to the item.")
 
-        result = pyhop2.find_plan(state1, [('groceryshop','robot','coliflower')],verbose=3)
+        for item in item_list:        	
+        	new_state = pyhop2.run_lazy_lookahead(new_state,[('groceryshop','robot', item)],verbose=3)
 
-        pause()
-        new_state = pyhop2.run_lazy_lookahead(state1,[('groceryshop','robot','coliflower')],verbose=3)
-        pause()
+        # result = pyhop2.find_plan(new_state,[('groceryshop','robot','chicken')],verbose=3)
 
-        result = pyhop2.find_plan(new_state,[('groceryshop','robot','chicken')],verbose=3)
-
-        pause()
-        new_state = pyhop2.run_lazy_lookahead(new_state,[('groceryshop','robot','chicken')],verbose=3)
+        # pause()
+        # new_state = pyhop2.run_lazy_lookahead(new_state,[('groceryshop','robot','chicken')],verbose=3)
 
 
 
