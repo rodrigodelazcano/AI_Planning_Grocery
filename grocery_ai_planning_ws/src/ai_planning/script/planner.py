@@ -27,9 +27,9 @@ rigid.types = {
     'location': ['coliflower', 'chicken']}
 
 # prototypical initial state
-state0 = pyhop2.State()
+state0 = pyhop2.State('state0')
 state0.loc = {'robot':(1,1), 'coliflower': (1.54, 5.4), 'chicken': (2.06, 10.73)}
-state0.wayp = []
+# state0.wayp = []
 
 
 # Helper functions:
@@ -53,11 +53,11 @@ def is_a(variable,type):
 def move_robot(state,r,y):
     if is_a(r,'person') and is_a(y,'location') and state.loc[r] != state.loc[y]:
         
-        global state0
+        # global state0
         
-        state.wayp.append(astar(state.loc[r],state.loc[y], 0.4))
+        # state.wayp.append(astar(state.loc[r],state.loc[y], 0.4))
         state.loc[r] = state.loc[y]
-        state0 = state
+        # state0 = state
         return state
 
 pyhop2.declare_actions(move_robot)
@@ -67,7 +67,23 @@ pyhop2.declare_actions(move_robot)
 
 def c_move_robot(state,r,y):
     if is_a(r,'person') and is_a(y,'location') and state.loc[r] != state.loc[y]:
-        state.wayp = astar(state.loc[r],state.loc[y], 0.4)
+        
+        resp_location = robot_location('mobile_base', 'world')
+        coord = (resp_location.pose.position.x, resp_location.pose.position.y)
+
+        wayp = astar(coord, state.loc[y], 0.4)
+
+        path = wayp
+        path_msg = []
+
+        for point in path:
+            waypoint = WayPoint()
+            waypoint.coord = point
+            path_msg.append(waypoint)
+        
+        resp = follow_path(path_msg)
+        # print(resp)
+
         state.loc[r] = state.loc[y]
         return state
 
@@ -81,8 +97,13 @@ def shop(state,r,y):
         if state.loc[r] != state.loc[y]:
             return [('move_robot',r,y)]
 
-pyhop2.declare_task_methods('groceryshop',shop)
+def do_nothing(state,r,y):
+	if is_a(r,'person') and is_a(y,'location'):
+		if state.loc[r] == state.loc[y]:
+			return []
 
+
+pyhop2.declare_task_methods('groceryshop', do_nothing, shop)
 
 # Running the examples
 
@@ -106,27 +127,29 @@ if __name__ == '__main__':
         rospy.set_param("turtlebot/step_size", step_size)
         follow_path = rospy.ServiceProxy('follow_path', Path)
         robot_location = rospy.ServiceProxy('/gazebo/get_model_state', GetModelState)
+
+        # resp_location = robot_location('mobile_base', 'world')
+        # coord = (resp_location.pose.position.x, resp_location.pose.position.y)
         
         #####################################################
 
         # Pyhop2 main()
 
-        resp_location = robot_location('mobile_base', 'world')
-        print(resp_location.pose.position)
-        # state1 = state0.copy()
-        # state1.display(heading='\nInitial state is')
 
-        # pause()
-        # print("Use find plan to plan how to get Robot from start to the item.")
+        state1 = state0.copy()
+        state1.display(heading='\nInitial state is')
 
-        # expected = [('move_robot', 'robot', 'coliflower'), ('move_robot', 'robot', 'chicken')]
+        pause()
+        print("Use find plan to plan how to get Robot from start to the item.")
 
-        # result = pyhop2.find_plan(state1, [('groceryshop','robot','coliflower'), ('groceryshop','robot','chicken')],verbose=3)
-        # check_result(result, expected)
+        expected = [('move_robot', 'robot', 'coliflower')]
 
-        # # pause()
-        # # new_state = pyhop2.run_lazy_lookahead(state1,[('groceryshop','robot','item')],verbose=3)
-        # pause()
+        result = pyhop2.find_plan(state1, [('groceryshop','robot','coliflower')],verbose=3)
+        check_result(result, expected)
+
+        pause()
+        new_state = pyhop2.run_lazy_lookahead(state1,[('groceryshop','robot','coliflower')],verbose=3)
+        pause()
 
         # total_path = state0.wayp
         
@@ -136,16 +159,16 @@ if __name__ == '__main__':
 
         # 	path = total_path.pop(0)
 
-	    #     path_msg = []
-	    #     for point in path:
-	    #         waypoint = WayPoint()
-	    #         waypoint.coord = point
-	    #         path_msg.append(waypoint)
+	       #  path_msg = []
+	       #  for point in path:
+	       #      waypoint = WayPoint()
+	       #      waypoint.coord = point
+	       #      path_msg.append(waypoint)
 	        
-	    #     resp = follow_path(path_msg)
+	       #  resp = follow_path(path_msg)
 
-	    #     item_ctr += 1
-	    #     print('Item No: ', item_ctr, 'picked!!')
+	       #  item_ctr += 1
+	       #  print('Item No: ', item_ctr, 'picked!!')
 
         # print(resp)
         
