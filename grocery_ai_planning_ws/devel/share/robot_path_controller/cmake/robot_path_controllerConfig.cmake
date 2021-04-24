@@ -1,1 +1,0 @@
-/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/robot_path_controller/share/robot_path_controller/cmake/robot_path_controllerConfig.cmake
