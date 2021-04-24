@@ -17,7 +17,7 @@ class TurtlebotGoToEnv(TurtlebotEnv):
 
         self.linear_forward_speed = 0.2
         # Proportional gain for angular and linear pose P control
-        self.kp_w = 0.1
+        self.kp_w = 0.05
         self.kp_v = 1.5
         self.robot_direction = "E"
 
@@ -104,7 +104,7 @@ class TurtlebotGoToEnv(TurtlebotEnv):
         while (abs(error) > 0.01):
             yaw = math.degrees(self.get_yaw())
             
-            if (init_yaw < 180 and init_yaw > 150 and yaw < 0):
+            if (reference == 180 and yaw < 0):
                 yaw += 360
             error = reference - yaw
             angular_speed = self.kp_w * error

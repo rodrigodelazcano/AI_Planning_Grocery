@@ -2,19 +2,26 @@
 
 import pyhop2
 from a_star import astar
+from gbfs import gbfs
 from map import Map
+from renderer import Renderer
 from robot_path_controller.srv import Path, PathResponse
 from robot_path_controller.msg import WayPoint
 import rospy
 from gazebo_msgs.srv import GetModelState
 from check_result import check_result, pause, set_trace
 from products import Products
+import numpy as np
 
 prod = Products()
+prod.seed(1)
 item_list = prod.get_random_list()
+item_list.append('cashier')
+renderer = Renderer()
 
 #########################################################
 ## Grocery Plan #########################################
+# loc = {'robot': (7.4, 12.85), 'brocoli': (1.54, 5.4), 'cucumber': (1.54, 7.91), 'salt': (8.39, 4.79), 'watermelon': (5.1, 8.44), 'strawberry': (2.31, 6.36), 'potato': (3.58, 7.44), 'hamburger': (7.4, 12.85)}
 
 domain_name = 'groceryplan'
 
@@ -34,6 +41,7 @@ rigid.types = {
 # prototypical initial state
 state0 = pyhop2.State('state0')
 state0.loc = {'robot':(1,1)}
+state0.cost = {'robot': 0}
 
 # adding items in the list
 for item in item_list:
@@ -78,21 +86,61 @@ def c_move_robot(state,r,y):
         
         resp_location = robot_location('mobile_base', 'world')
         coord = (resp_location.pose.position.x, resp_location.pose.position.y)
-
-        wayp = astar(coord, state.loc[y], 0.4)
-
-        path = wayp
-        path_msg = []
-
-        for point in path:
-            waypoint = WayPoint()
-            waypoint.coord = point
-            path_msg.append(waypoint)
         
-        resp = follow_path(path_msg)
-        # print(resp)
+        #######################################
+        ### PLANNING WITHOUT FINITE HORIZON ###
+        #######################################
+        # wayp = astar(coord, state.loc[y], 0.4)
+        # path = wayp
+        # renderer.draw_Astar_path(path)
+        # path_msg = []
+        # state.cost[r] = len(path) * 0.4
+        # for point in path:
+        #     waypoint = WayPoint()
+        #     waypoint.coord = point
+        #     path_msg.append(waypoint)
+        
+        # resp = follow_path(path_msg)
 
-        state.loc[r] = state.loc[y]
+        # resp_location = robot_location('mobile_base', 'world')
+        # coord = (resp_location.pose.position.x, resp_location.pose.position.y)
+
+        ####################################
+        ### PLANNING WITH FINITE HORIZON ###
+        ####################################
+        distance_goal = np.linalg.norm(np.array(coord) - np.array(state.loc[y]))
+        while(distance_goal > 0.5):
+            
+            wayp = astar(coord, state.loc[y], 0.4)
+
+            path = wayp
+            path_msg = []
+
+            if len(path) >= 4:
+                state.cost[r] += 4 * 0.4
+                renderer.draw_Astar_path(path[:3])
+                for point in path[:3]:
+                    waypoint = WayPoint()
+                    waypoint.coord = point
+                    path_msg.append(waypoint)
+            else:
+                state.cost[r] += len(path) * 0.4
+                renderer.draw_Astar_path(path)
+                for point in path:
+                    waypoint = WayPoint()
+                    waypoint.coord = point
+                    path_msg.append(waypoint)
+
+            resp = follow_path(path_msg)
+
+            resp_location = robot_location('mobile_base', 'world')
+            coord = (resp_location.pose.position.x, resp_location.pose.position.y)
+
+            distance_goal = np.linalg.norm(np.array(coord) - np.array(state.loc[y]))
+        
+        # Final state location of the robot
+        state.loc[r] = coord
+
         return state
 
 pyhop2.declare_commands(c_move_robot)
@@ -118,12 +166,12 @@ pyhop2.declare_task_methods('groceryshop', do_nothing, shop)
 print('-----------------------------------------------------------------------')
 print(f"Created the domain '{domain_name}'.")
 
-
-##### GROCERY PLAN ENDS #################################
-#########################################################
-
+############################
+##### GROCERY PLAN ENDS ####
+############################
 if __name__ == '__main__':
 
+    
     pyhop2.set_current_domain(domain_name)
     pyhop2.print_domain()
 
@@ -148,9 +196,30 @@ if __name__ == '__main__':
         new_state.display(heading='\nInitial state is')
 
         print("Use find plan to plan how to get Robot from start to the item.")
-
-        for item in item_list:        	
+        
+        renderer.draw_product_location(item_list)     # Draw product location with distance threshold
+        
+        start_time = rospy.get_rostime()
+        ##########################
+        ### FOLLOW RANDOM LIST ###
+        ##########################
+        # renderer.draw_random_list(item_list)        # Draw the path sequence when the products are retrieved randomly
+        # for item in item_list:        	
+        # 	new_state = pyhop2.run_lazy_lookahead(new_state,[('groceryshop','robot', item)],verbose=3)
+        
+        ################################
+        ### FOLLOW GBFS ORDERED LIST ###
+        ################################
+        GBFS_ordered_list = gbfs(item_list[:-1])
+        GBFS_ordered_list.append('cashier')
+        renderer.draw_GBFS_list(GBFS_ordered_list)    # Draw the path sequence when the proucts are retrieved after being order with GBFS algorithm
+        for item in GBFS_ordered_list:        	
         	new_state = pyhop2.run_lazy_lookahead(new_state,[('groceryshop','robot', item)],verbose=3)
+        end_time = rospy.get_rostime()
+
+        renderer.draw_duration_cost(end_time.to_sec() - start_time.to_sec(), new_state.cost['robot'])
+        
+        renderer.render()  # render the map info
 
         # result = pyhop2.find_plan(new_state,[('groceryshop','robot','chicken')],verbose=3)
 

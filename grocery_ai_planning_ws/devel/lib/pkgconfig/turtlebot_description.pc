@@ -1,0 +1,1 @@
+/home/rodri/AI_Planning_Grocery/grocery_ai_planning_ws/devel/.private/turtlebot_description/lib/pkgconfig/turtlebot_description.pc

@@ -33,16 +33,16 @@ class Products():
             "water_bottle": (14.85, 6.86),
             "cake": (13.53, 6.8),
             "bread": (12.65, 4.82),
-            "cereals": (7.12, 4.79),
-            "sugar": (7.71, 4.79),
-            "salt": (8.39, 4.79),
-            "ketchup": (8.92, 4.79),
-            "cocoa": (10, 5.37),
-            "tea": (10, 5.93),
+            "cereals": (7.3, 4.66),
+            "sugar": (7.3, 4.66),
+            "salt": (8.55, 4.66),
+            "ketchup": (8.55, 4.66),
+            "cocoa": (10.31, 5.76),
+            "tea": (10.31, 5.76),
             "tomato_soup": (8.63, 6.66),
-            "pasta": (8.22, 6.66),
-            "olive_oil": (7.66, 6.66),
-            "chips": (6.99, 6.66),
+            "pasta": (8.5, 6.87),
+            "olive_oil": (7.27, 6.88),
+            "chips": (7.27, 6.88),
             "banana": (3.42, 4.63),
             "pear": (2.39, 5.24),
             "orange": (4.37, 5.34),
@@ -56,13 +56,16 @@ class Products():
             "sweet_potato": (3.03, 7.45),
             "watermelon": (5.1, 8.44),
             "carrot": (2.85, 9.33),
-            "onion": (3.58, 9.33)
+            "onion": (3.58, 9.33),
+            "coffee": (5.63, 5.68),
+            "cookies": (5.63, 5.68),
+            "cashier": (14.65, 3.042)
             }
         
         self.all_prod_list = self.product_list.keys()
     def get_random_list(self):
         number_prod = random.randint(4,9) # number of products to be generated in the list
-        return random.sample(self.all_prod_list, number_prod)
+        return random.sample([x for x in self.all_prod_list if x != "cashier"], number_prod)
     def seed(self, seed):
         random.seed(seed)
 
