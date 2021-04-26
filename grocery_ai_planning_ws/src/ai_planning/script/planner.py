@@ -76,7 +76,20 @@ def move_robot(state,r,y):
         # state0 = state
         return state
 
-pyhop2.declare_actions(move_robot)
+def pick_item(state, r, y):
+	if is_a(r,'person') and is_a(y,'location') and state.loc[r] == state.loc[y]:
+		state.loc[y] = state.loc[r]
+		print(y, ' picked !!')
+		return state
+
+def pay_robot(state, r, y):
+	if is_a(r,'person') and is_a(y,'location') and state.loc[r] == state.loc[y]:
+		state.cost[r] = 0
+		print(r, ' paid !!')
+		return state
+
+
+pyhop2.declare_actions(move_robot, pick_item, pay_robot)
 
 
 # Commands:
@@ -139,11 +152,23 @@ def c_move_robot(state,r,y):
             distance_goal = np.linalg.norm(np.array(coord) - np.array(state.loc[y]))
         
         # Final state location of the robot
-        state.loc[r] = coord
+        state.loc[r] = state.loc[y]
 
         return state
 
-pyhop2.declare_commands(c_move_robot)
+def c_pick_item(state, r, y):
+	if is_a(r,'person') and is_a(y,'location') and state.loc[r] == state.loc[y]:
+		state.loc[y] = state.loc[r]
+		print(y, ' picked !!')
+		return state
+
+def c_pay_robot(state, r, y):
+	if is_a(r,'person') and is_a(y,'location') and state.loc[r] == state.loc[y]:
+		state.cost[r] = 0
+		print(r, ' paid !!')
+		return state
+
+pyhop2.declare_commands(c_move_robot, c_pick_item, c_pay_robot)
 
 
 # Methods:
@@ -151,15 +176,28 @@ pyhop2.declare_commands(c_move_robot)
 def shop(state,r,y):
     if is_a(r,'person') and is_a(y,'location'):
         if state.loc[r] != state.loc[y]:
-            return [('move_robot',r,y)]
+            return [('move_robot',r,y), ('pick_item', r, y), ]
 
 def do_nothing(state,r,y):
 	if is_a(r,'person') and is_a(y,'location'):
 		if state.loc[r] == state.loc[y]:
 			return []
 
+def pay_money(state, r, y):
+	if is_a(r,'person') and is_a(y,'location'):
+		if state.loc[r] == state.loc[y] and state.cost[r] != 0:
+			return [('pay_robot', r, y)]
+
+def paid(state, r, y):
+	if is_a(r,'person') and is_a(y,'location'):
+		if state.loc[r] == state.loc[y] and state.cost[r] == 0:
+			return []
+
+
 
 pyhop2.declare_task_methods('groceryshop', do_nothing, shop)
+pyhop2.declare_task_methods('pay', paid, pay_money)
+
 
 # Running the examples
 
@@ -213,41 +251,17 @@ if __name__ == '__main__':
         GBFS_ordered_list = gbfs(item_list[:-1])
         GBFS_ordered_list.append('cashier')
         renderer.draw_GBFS_list(GBFS_ordered_list)    # Draw the path sequence when the proucts are retrieved after being order with GBFS algorithm
+        
         for item in GBFS_ordered_list:        	
         	new_state = pyhop2.run_lazy_lookahead(new_state,[('groceryshop','robot', item)],verbose=3)
-        end_time = rospy.get_rostime()
+        
+        final_state = pyhop2.run_lazy_lookahead(new_state,[('pay','robot', GBFS_ordered_list.pop())],verbose=3)
 
+        end_time = rospy.get_rostime()
         renderer.draw_duration_cost(end_time.to_sec() - start_time.to_sec(), new_state.cost['robot'])
         
         renderer.render()  # render the map info
 
-        # result = pyhop2.find_plan(new_state,[('groceryshop','robot','chicken')],verbose=3)
-
-        # pause()
-        # new_state = pyhop2.run_lazy_lookahead(new_state,[('groceryshop','robot','chicken')],verbose=3)
-
-
-
-        # total_path = state0.wayp
-        
-        # item_ctr = 0
-
-        # while(total_path):
-
-        # 	path = total_path.pop(0)
-
-	       #  path_msg = []
-	       #  for point in path:
-	       #      waypoint = WayPoint()
-	       #      waypoint.coord = point
-	       #      path_msg.append(waypoint)
-	        
-	       #  resp = follow_path(path_msg)
-
-	       #  item_ctr += 1
-	       #  print('Item No: ', item_ctr, 'picked!!')
-
-        # print(resp)
         
     except rospy.ServiceException as e:
         print("Service call failed: %s"%e)
