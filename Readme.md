@@ -6,6 +6,12 @@ The project employs [Prof. Dana Nau's](http://www.cs.umd.edu/users/nau/) task pl
   <br><b>Figure - Grocery World</b><br>
 </p>
 
+According to the task, the actions are generated in a todolist to perform the task. For path planning we use A* algorithm and to optimize the list of task we are using GBFS algorithm. To make it more real time, we are using Receding Horizon approach to replan path everytime after few waypoints.
+
+<p align="center">
+  <img src="https://github.com/rodrigodelazcano/AI_Planning_Grocery/blob/master/Resources/OpenCV.png" width=500>
+  <br><b>Figure - Planned Path using A*</b><br>
+</p>
 
 ## Authors
 
@@ -45,6 +51,11 @@ roslaunch grocery turtlebot.launch
 source devel/setup.bash
 rosrun ai_planning planner.py
 ```
-### Results
+## Results
 Link for the Results: [Video Link](https://drive.google.com/drive/u/0/folders/1MNGH7bco9fh1BIiopohmqfRFfh_OUMve)
 Report will be uploaded soon.
+
+<p align="center">
+  <img src="https://github.com/rodrigodelazcano/AI_Planning_Grocery/blob/master/Resources/output.gif">
+  <br><b>Figure - Grocery Robot picking up Groceries using HTN Planner</b><br>
+</p>
