@@ -1,6 +1,11 @@
-This is a coursework project for CMSC722 - Artificial Intelligence Planning.
-
 # Overview
+The project employs (Prof. Dana Nau's)[http://www.cs.umd.edu/users/nau/] task planning algorithm Pyhop2 to perform a task of buying groceries using Turtlebot in Gazebo environment. The primary objective of the project is to provide a complete solution, starting from getting the grocery list, arranging the order of retrieving those products optimally, collecting the products and finally buying them without any contingencies. AI planning is not only used for planning all the tasks optmally but also takes failure of any task into account as well.
+
+<p align="center">
+  <img src="https://github.com/rodrigodelazcano/AI_Planning_Grocery/blob/master/Resources/Front%20View.jpg">
+  <br><b>Figure - Grocery World</b><br>
+</p>
+
 
 ## Authors
 
@@ -11,30 +16,32 @@ This is a coursework project for CMSC722 - Artificial Intelligence Planning.
 ## Dependencies
 - ROS
 - Gazebo
-- Pyhop
+- Turtlebot
+- [Pyhop2](https://github.com/patras91/pyhop2)
 
 ## Instructions
-
-- Clone the repository
+Open a new terminal and clone the repository.
 ```
 git clone https://github.com/rodrigodelazcano/AI_Planning_Grocery
 cd AI_Planning_Grocery
 ```
 
 ### Build Instructions
-
-### Run Instructions for Authors
-
-Instructions to run A* algorithm.
-
+Navigate to grocery_ai_planning_ws and build using CATKIN MAKE.
 ```
-cd Astar
-python3 a_star.py
+cd ~/AI_Planning_Grocery/grocery_ai_planning_ws
+catkin_make
 ```
 
-Instructions to run ROS World.
+### Run Instructions
+- Launch the ROS world.
 ```
 cd ~/AI_Planning_Grocery/grocery_ai_planning_ws/
 source devel/setup.bash
 roslaunch grocery turtlebot.launch
+```
+- In the new tab, run the ROS node.
+```
+source devel/setup.bash
+rosrun ai_planning planner.py
 ```
