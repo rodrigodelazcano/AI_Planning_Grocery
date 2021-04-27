@@ -10,7 +10,7 @@ According to the task, the actions are generated in a todolist to perform the ta
 
 <p align="center">
   <img src="https://github.com/rodrigodelazcano/AI_Planning_Grocery/blob/master/Resources/OpenCV.png" width=400>
-  <br><b>Figure - Planned Path using A*</b><br>
+  <br><b>Figure -  Path traced by robot using A* Algorithm</b><br>
 </p>
 
 ## Authors
