@@ -1,5 +1,5 @@
 # Overview
-The project employs (Prof. Dana Nau's)[http://www.cs.umd.edu/users/nau/] task planning algorithm Pyhop2 to perform a task of buying groceries using Turtlebot in Gazebo environment. The primary objective of the project is to provide a complete solution, starting from getting the grocery list, arranging the order of retrieving those products optimally, collecting the products and finally buying them without any contingencies. AI planning is not only used for planning all the tasks optmally but also takes failure of any task into account as well.
+The project employs [Prof. Dana Nau's](http://www.cs.umd.edu/users/nau/) task planning algorithm Pyhop2 to perform a task of buying groceries using Turtlebot in Gazebo environment. The primary objective of the project is to provide a complete solution, starting from getting the grocery list, arranging the order of retrieving those products optimally, collecting the products and finally buying them without any contingencies. AI planning is not only used for planning all the tasks optmally but also takes failure of any task into account as well.
 
 <p align="center">
   <img src="https://github.com/rodrigodelazcano/AI_Planning_Grocery/blob/master/Resources/Front%20View.jpg">
@@ -45,3 +45,6 @@ roslaunch grocery turtlebot.launch
 source devel/setup.bash
 rosrun ai_planning planner.py
 ```
+### Results
+Link for the Results: [Video Link](https://drive.google.com/drive/u/0/folders/1MNGH7bco9fh1BIiopohmqfRFfh_OUMve)
+Report will be uploaded soon.
